@@ -27,11 +27,11 @@
 	if itemData.type == "weapon" then
 		TriggerClientEvent("inventory:client:UseWeapon", src, itemData, itemData.info.quality and itemData.info.quality > 0)
 		TriggerClientEvent('inventory:client:ItemBox', src, itemInfo, "use")
-		TriggerEvent('damon:server:pdweapon', src, item)
+		TriggerEvent('damon:server:pdwep', src, item)
 	elseif itemData.useable then
 		UseItem(itemData.name, src, itemData)
 		TriggerClientEvent('inventory:client:ItemBox', src, itemInfo, "use")
-		TriggerEvent('damon:server:pdweapon', src, item)
+		TriggerEvent('damon:server:pdwep', src, item)
 	end
 end)
 
@@ -44,11 +44,11 @@ RegisterNetEvent('inventory:server:UseItem', function(inventory, item)
 	if itemData.type == "weapon" then
 		TriggerClientEvent("inventory:client:UseWeapon", src, itemData, itemData.info.quality and itemData.info.quality > 0)
 		TriggerClientEvent('inventory:client:ItemBox', src, itemInfo, "use")
-		TriggerEvent('damon:server:pdweapon', src, item)
+		TriggerEvent('damon:server:pdwep', src, item)
 	else
 		UseItem(itemData.name, src, itemData)
 		TriggerClientEvent('inventory:client:ItemBox', src, itemInfo, "use")
-		TriggerEvent('damon:server:pdweapon', src, item)
+		TriggerEvent('damon:server:pdwep', src, item)
 	end
 end)
 ```
