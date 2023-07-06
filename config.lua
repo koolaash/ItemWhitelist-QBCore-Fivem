@@ -6,3 +6,5 @@ Config.PoliceItems = {
     'ifaks',
     'heavyarmor',
 }
+
+Config.jobName = "police"
