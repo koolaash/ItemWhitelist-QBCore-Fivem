@@ -11,7 +11,7 @@
 - Drag and drop to `[qb]` folder or ensure it in `server.cfg`
 
 ```lua
-  TriggerEvent('damon:server:pdwep', src, itemInfo)
+  pdwep(src, itemInfo)
 ```
     
 - Copy the code given above and head to `qb-inventory>server>main.lua`
@@ -27,11 +27,11 @@
 	if itemData.type == "weapon" then
 		TriggerClientEvent("inventory:client:UseWeapon", src, itemData, itemData.info.quality and itemData.info.quality > 0)
 		TriggerClientEvent('inventory:client:ItemBox', src, itemInfo, "use")
-		TriggerEvent('damon:server:pdwep', src, itemInfo)
+		pdwep(src, itemInfo)
 	elseif itemData.useable then
 		UseItem(itemData.name, src, itemData)
 		TriggerClientEvent('inventory:client:ItemBox', src, itemInfo, "use")
-		TriggerEvent('damon:server:pdwep', src, itemInfo)
+		pdwep(src, itemInfo)
 	end
 end)
 
@@ -44,11 +44,11 @@ RegisterNetEvent('inventory:server:UseItem', function(inventory, item)
 	if itemData.type == "weapon" then
 		TriggerClientEvent("inventory:client:UseWeapon", src, itemData, itemData.info.quality and itemData.info.quality > 0)
 		TriggerClientEvent('inventory:client:ItemBox', src, itemInfo, "use")
-		TriggerEvent('damon:server:pdwep', src, itemInfo)
+		pdwep(src, itemInfo)
 	else
 		UseItem(itemData.name, src, itemData)
 		TriggerClientEvent('inventory:client:ItemBox', src, itemInfo, "use")
-		TriggerEvent('damon:server:pdwep', src, itemInfo)
+		pdwep(src, itemInfo)
 	end
 end)
 ```
