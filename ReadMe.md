@@ -2,7 +2,9 @@
 **ITEMS WHITELIST**
 -----
 
-- This script lets you whitelist some items usage to a particular job only
+- This script lets you whitelist some weapons usage to a particular job only
+- Script no longer works with items and will only work with weapons
+- If anyone finds a work around with for items do let me know [Discord](https://discord.gg/S7SXz7E8St)
 
 
 **Installation**
@@ -11,7 +13,7 @@
 - Drag and drop to `[qb]` folder or ensure it in `server.cfg`
 
 ```lua
-  pdwep(src, itemInfo)
+  pdweapon(src, itemData)
 ```
     
 - Copy the code given above and head to `qb-inventory>server>main.lua`
@@ -27,11 +29,11 @@
 	if itemData.type == "weapon" then
 		TriggerClientEvent("inventory:client:UseWeapon", src, itemData, itemData.info.quality and itemData.info.quality > 0)
 		TriggerClientEvent('inventory:client:ItemBox', src, itemInfo, "use")
-		pdwep(src, itemInfo)
+		pdweapon(src, itemData)
 	elseif itemData.useable then
 		UseItem(itemData.name, src, itemData)
 		TriggerClientEvent('inventory:client:ItemBox', src, itemInfo, "use")
-		pdwep(src, itemInfo)
+		pdweapon(src, itemData)
 	end
 end)
 
@@ -44,11 +46,11 @@ RegisterNetEvent('inventory:server:UseItem', function(inventory, item)
 	if itemData.type == "weapon" then
 		TriggerClientEvent("inventory:client:UseWeapon", src, itemData, itemData.info.quality and itemData.info.quality > 0)
 		TriggerClientEvent('inventory:client:ItemBox', src, itemInfo, "use")
-		pdwep(src, itemInfo)
+		pdweapon(src, itemData)
 	else
 		UseItem(itemData.name, src, itemData)
 		TriggerClientEvent('inventory:client:ItemBox', src, itemInfo, "use")
-		pdwep(src, itemInfo)
+		pdweapon(src, itemData)
 	end
 end)
 ```

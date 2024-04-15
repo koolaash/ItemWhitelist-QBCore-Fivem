@@ -1,6 +1,6 @@
 RegisterNetEvent('damon:client:pdwep', function()
-	local ped = PlayerPedId()
-    TriggerClientEvent("progressbar:client:cancel", src)
+    local player = GetPlayerPed(-1)
+    local ped = PlayerPedId()
     SetCurrentPedWeapon(ped, GetHashKey("WEAPON_UNARMED"), true)
 end)
 

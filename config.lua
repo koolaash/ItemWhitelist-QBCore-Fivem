@@ -1,6 +1,6 @@
 Config = {}
 
-Config.PoliceItems = {
+Config.PoliceWeapon = {
     'weapon_smg',
     'weapon_glock17',
     'ifaks',
